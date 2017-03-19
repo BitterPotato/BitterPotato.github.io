@@ -38,7 +38,8 @@
 对pivot的左半">
 <meta property="og:image" content="http://oi0xi3dzx.bkt.clouddn.com/quicksort_ver1.png?imageView/2/w/344">
 <meta property="og:image" content="http://oi0xi3dzx.bkt.clouddn.com/quicksort_ver2.png?imageView/2/w/358">
-<meta property="og:updated_time" content="2016-12-13T04:18:08.351Z">
+<meta property="og:image" content="https://i.stack.imgur.com/NhkeU.png">
+<meta property="og:updated_time" content="2017-03-19T15:01:17.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QuickSort">
 <meta name="twitter:description" content="概述快速排序是面试中的常见题，每次简述一遍快速排序的原理便觉得仿佛已经掌握了它。不是挺简单的吗？然而实际实现的时候还是会遇到一些坑。于是，之前一次面试就跪了，很尴尬。所以，还是需要对它进行深入理解！
@@ -89,8 +90,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/sketch">相册</a></li>
 	        
 			</ul>
 		</nav>
@@ -147,8 +146,6 @@
 				<ul>
 				
 					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/sketch">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -356,6 +353,26 @@ while(!stack.isEmpty()) {
 <blockquote>
 <p>It’s important to note that this isn’t a bug in the JVM. It’s an optimization that can be implemented to help functional programmers who use recursion, which is much more common and normal in those languages. I recently spoke to Brian Goetz at Oracle about this optimization, and he said that it’s on a list of things to be added to the JVM, but it’s just not a high-priority item. For now, it’s best to make this optimization yourself, if you can, by avoiding deeply recursive functions when coding a functional language on the JVM.</p>
 </blockquote>
+<h5 id="DualPivotQuicksort"><a href="#DualPivotQuicksort" class="headerlink" title="DualPivotQuicksort"></a><a href="http://codeblab.com/wp-content/uploads/2009/09/DualPivotQuicksort.pdf" target="_blank" rel="external">DualPivotQuicksort</a></h5><p>Java中对于基本数据类型的排序算法通过DualPivotQuicksort实现。它有如下特性：This algorithm offers O(n log(n)) performance on many data sets that cause other quicksorts to degrade to quadratic performance, and is typically faster than traditional (one-pivot) Quicksort implementations.<br><img src="https://i.stack.imgur.com/NhkeU.png" alt="DualPivotQuicksort"></p>
+<p>排序方式具体如下：</p>
+<ol>
+<li>For small arrays (length &lt; 17), use the Insertion sort algorithm.</li>
+<li>Choose two pivot elements P1 and P2. We can get, for example, the first element a[left] as P1 and the last element a[right] as P2.</li>
+<li>P1 must be less than P2, otherwise they are swapped. So, there are the following parts:</li>
+</ol>
+<ul>
+<li>part I with indices from left+1 to L–1 with elements, which are less than P1,</li>
+<li>part II with indices from L to K–1 with elements, which are greater or equal to P1 and less or equal to P2,</li>
+<li>part III with indices from G+1 to right–1 with elements greater than P2,</li>
+<li>part IV contains the rest of the elements to be examined with indices from K to G.</li>
+</ul>
+<ol>
+<li>The next element a[K] from the part IV is compared with two pivots P1 and P2, and placed to the corresponding part I, II, or III.</li>
+<li>The pointers L, K, and G are changed in the corresponding directions.</li>
+<li>The steps 4 - 5 are repeated while K ≤ G.</li>
+<li>The pivot element P1 is swapped with the last element from part I, the pivot element P2 is swapped with the first element from part III.</li>
+<li>The steps 1 - 7 are repeated recursively for every part I, part II, and part III.</li>
+</ol>
 <h5 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h5><table>
 <thead>
 <tr>
@@ -424,7 +441,7 @@ while(!stack.isEmpty()) {
 <p>单位：nanosecond<br>环境：CPU 4核8线程 2.30GHZ<br>测试序列：长度100范围0~100的随机数序列</p>
 </blockquote>
 <p><a href="https://github.com/BitterPotato/Algorithm" target="_blank" rel="external">代码地址</a></p>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>1 Mark Allen Weiss[美]. 数据结构与算法分析: Java语言描述:第2版[M]. 机械工业出版社, 2012.<br>2 ThomasH.Cormen…. 算法导论:第2版[M]. 机械工业出版社, 2007.<br>3 <a href="http://blog.csdn.net/insistgogo/article/details/7785038" target="_blank" rel="external">http://blog.csdn.net/insistgogo/article/details/7785038</a><br>4 <a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/04/tail-call.html</a></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>1 Mark Allen Weiss[美]. 数据结构与算法分析: Java语言描述:第2版[M]. 机械工业出版社, 2012.<br>2 ThomasH.Cormen…. 算法导论:第2版[M]. 机械工业出版社, 2007.<br>3 <a href="http://blog.csdn.net/insistgogo/article/details/7785038" target="_blank" rel="external">http://blog.csdn.net/insistgogo/article/details/7785038</a><br>4 <a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/04/tail-call.html</a><br>5 <a href="http://stackoverflow.com/questions/20917617/whats-the-difference-of-dual-pivot-quick-sort-and-quick-sort" target="_blank" rel="external">http://stackoverflow.com/questions/20917617/whats-the-difference-of-dual-pivot-quick-sort-and-quick-sort</a></p>
 
       
     </div>
@@ -491,7 +508,7 @@ while(!stack.isEmpty()) {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Yang Weijie
+    		&copy; 2017 Yang Weijie
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

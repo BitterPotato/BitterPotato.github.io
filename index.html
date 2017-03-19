@@ -53,8 +53,6 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/sketch">相册</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -110,8 +108,6 @@
 				<ul>
 				
 					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/sketch">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -321,6 +317,26 @@ while(!stack.isEmpty()) {
 <blockquote>
 <p>It’s important to note that this isn’t a bug in the JVM. It’s an optimization that can be implemented to help functional programmers who use recursion, which is much more common and normal in those languages. I recently spoke to Brian Goetz at Oracle about this optimization, and he said that it’s on a list of things to be added to the JVM, but it’s just not a high-priority item. For now, it’s best to make this optimization yourself, if you can, by avoiding deeply recursive functions when coding a functional language on the JVM.</p>
 </blockquote>
+<h5 id="DualPivotQuicksort"><a href="#DualPivotQuicksort" class="headerlink" title="DualPivotQuicksort"></a><a href="http://codeblab.com/wp-content/uploads/2009/09/DualPivotQuicksort.pdf" target="_blank" rel="external">DualPivotQuicksort</a></h5><p>Java中对于基本数据类型的排序算法通过DualPivotQuicksort实现。它有如下特性：This algorithm offers O(n log(n)) performance on many data sets that cause other quicksorts to degrade to quadratic performance, and is typically faster than traditional (one-pivot) Quicksort implementations.<br><img src="https://i.stack.imgur.com/NhkeU.png" alt="DualPivotQuicksort"></p>
+<p>排序方式具体如下：</p>
+<ol>
+<li>For small arrays (length &lt; 17), use the Insertion sort algorithm.</li>
+<li>Choose two pivot elements P1 and P2. We can get, for example, the first element a[left] as P1 and the last element a[right] as P2.</li>
+<li>P1 must be less than P2, otherwise they are swapped. So, there are the following parts:</li>
+</ol>
+<ul>
+<li>part I with indices from left+1 to L–1 with elements, which are less than P1,</li>
+<li>part II with indices from L to K–1 with elements, which are greater or equal to P1 and less or equal to P2,</li>
+<li>part III with indices from G+1 to right–1 with elements greater than P2,</li>
+<li>part IV contains the rest of the elements to be examined with indices from K to G.</li>
+</ul>
+<ol>
+<li>The next element a[K] from the part IV is compared with two pivots P1 and P2, and placed to the corresponding part I, II, or III.</li>
+<li>The pointers L, K, and G are changed in the corresponding directions.</li>
+<li>The steps 4 - 5 are repeated while K ≤ G.</li>
+<li>The pivot element P1 is swapped with the last element from part I, the pivot element P2 is swapped with the first element from part III.</li>
+<li>The steps 1 - 7 are repeated recursively for every part I, part II, and part III.</li>
+</ol>
 <h5 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a>性能比较</h5><table>
 <thead>
 <tr>
@@ -389,7 +405,7 @@ while(!stack.isEmpty()) {
 <p>单位：nanosecond<br>环境：CPU 4核8线程 2.30GHZ<br>测试序列：长度100范围0~100的随机数序列</p>
 </blockquote>
 <p><a href="https://github.com/BitterPotato/Algorithm" target="_blank" rel="external">代码地址</a></p>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>1 Mark Allen Weiss[美]. 数据结构与算法分析: Java语言描述:第2版[M]. 机械工业出版社, 2012.<br>2 ThomasH.Cormen…. 算法导论:第2版[M]. 机械工业出版社, 2007.<br>3 <a href="http://blog.csdn.net/insistgogo/article/details/7785038" target="_blank" rel="external">http://blog.csdn.net/insistgogo/article/details/7785038</a><br>4 <a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/04/tail-call.html</a></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>1 Mark Allen Weiss[美]. 数据结构与算法分析: Java语言描述:第2版[M]. 机械工业出版社, 2012.<br>2 ThomasH.Cormen…. 算法导论:第2版[M]. 机械工业出版社, 2007.<br>3 <a href="http://blog.csdn.net/insistgogo/article/details/7785038" target="_blank" rel="external">http://blog.csdn.net/insistgogo/article/details/7785038</a><br>4 <a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/04/tail-call.html</a><br>5 <a href="http://stackoverflow.com/questions/20917617/whats-the-difference-of-dual-pivot-quick-sort-and-quick-sort" target="_blank" rel="external">http://stackoverflow.com/questions/20917617/whats-the-difference-of-dual-pivot-quick-sort-and-quick-sort</a></p>
 
       
     </div>
@@ -532,7 +548,7 @@ while(!stack.isEmpty()) {
 <p>我害怕忘记，害怕忘记当时的感觉。如果忘了，那么当时的那种感觉又算什么？是矫情？是廉价的掩饰？所幸这段经历总在男女主的某个地方留下痕迹。</p>
 <p>缠结…是产灵，是时间…我想，这就是本影所基于的神秘力量。若按照时间线观点，则会遇到“蛋生鸡、鸡生蛋”的逻辑闭环，也与“改变历史必然产生重大影响”的未经验证的普遍认识不符。与深入人心的时间线观不同，丝带的缠结，让本影的男女主穿越时间、互换身体。回顾下丝带接力（以泷的时间观），三年前的三叶将丝带传给三年前的泷；互换身体的故事；泷将丝带还给三年前的三叶；五年后的泷邂逅八年后的三叶…嗯，感觉没什么不可能</p>
 <p>其实，有点很佩服男主。不仅是图力，汗珠流得非常青春..啧啧..而且男主不远千里、按图索骥、前来面基，抵御仿佛来自地狱的风雨，终于获得令人艳羡的道具-口嚼酒。换做是我，即使是那样强烈璀璨的情感涌动、遇到那么色彩斑斓的记忆，应该还是不足以支撑我的行动…</p>
-<p>不过，本影刻画男女主互相爱慕的产生过程有些欠缺，虽然后面的相互追逐、爱的表达十分满分。不是青梅竹马，胜似青梅竹马？本影略去了三叶说服dad,男版三叶的第一天表现。前者没有必要表现，但后者真的相当令人期待！我对本影还存在以下疑问：开场应该是男版三叶(卧室)和正常三叶(饭桌)的切换，不过为什么会是无缝链接？教授课程的老师CV大概是香菜？三叶向往的是下辈子成为东京的大帅哥，那么泷向往的是…(@四叶：完了完了)</p>
+<p>不过，本影刻画男女主互相爱慕的产生过程有些欠缺，虽然后面的相互追逐、爱的表达十分满分。不是青梅竹马，胜似青梅竹马？本影略去了三叶说服dad,男版三叶的第一天表现。前者没有必要表现，但后者真的相当令人期待！我对本影还存在以下疑问：开场应该是男版三叶(卧室)和正常三叶(饭桌)的切换，不过为什么会是无缝链接？三叶向往的是下辈子成为东京的大帅哥，那么泷向往的是…(@四叶：完了完了)</p>
 <p><img src="http://img.hb.aicdn.com/d81654164fe23c9cbda2014a6a62ba1048d057563e6df-u4tCh4_fw658" alt="名は/姐川 - 插画"></p>
 <p>彗星红、星空蓝、碧海青…这些颜色的组合、交融，真的很美、很艺术。尤其在电影院的大屏幕上显现，带来的视觉震撼难以形容。秉持一贯的文化承载，这次的圣地巡礼是在岐阜县飞弹市，神社、天桥(未果通话)、朱红栏杆(初次邂逅)…什么时候国漫也能够对一些古都/或者日常进行取景，让我们也能快快乐乐地巡礼，就好了！</p>
 <p>总结：首尾呼应、中间欢快、末尾感动。我的表情：[疑问][微笑][大笑][可爱][撇嘴][擦汗][爱心][呲牙][吓][强]</p>
@@ -577,7 +593,7 @@ while(!stack.isEmpty()) {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 Yang Weijie
+    		&copy; 2017 Yang Weijie
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
