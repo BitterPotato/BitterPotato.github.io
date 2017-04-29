@@ -6,33 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://site.com">
-  <title>Android Studio - gradle配置踩坑 | Yang Weijie&#39;s blog</title>
+  <title>三月的狮子 | Yang Weijie&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.问题当我们从团队协作者或者开源Android项目网站上获取以Gradle构建的Android项目，并点击Open an existing Android Studio project将它导入Android Studio时，经常遇到如下Android Studio未响应的问题：
-
-2.分析查看idea.log，我们得知问题是由Started sync with Gradle时造成Connecti">
+  <meta name="description" content="“哈？你现在又要去破坏那个家庭了吗？真可怜~”香子这样说。
+一直在想，零恍若溺亡的悲剧感为何被塑造得如此成功，如此具有代入感？每次零得到救赎的时候，总感觉，自己…自己，内心仿佛被几缕阳光照射到，是那样地温暖，可却那样地短暂。
+零面前有三座大山，最大的一座来自家庭，而另外两座则由家庭派生而来，一是职业，二是交际。
+诚如零自身所言，他的到来，摧毁了幸田家的两只雏鸟，占据了养父所有关于将棋的视线。零的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android Studio - gradle配置踩坑">
-<meta property="og:url" content="http://site.com/2016/12/08/Android-Gradle-Settings/index.html">
+<meta property="og:title" content="三月的狮子">
+<meta property="og:url" content="http://site.com/2017/04/29/三月的狮子/index.html">
 <meta property="og:site_name" content="Yang Weijie's blog">
-<meta property="og:description" content="1.问题当我们从团队协作者或者开源Android项目网站上获取以Gradle构建的Android项目，并点击Open an existing Android Studio project将它导入Android Studio时，经常遇到如下Android Studio未响应的问题：
-
-2.分析查看idea.log，我们得知问题是由Started sync with Gradle时造成Connecti">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/17B096A8FB554EFF84492110EE7C45AF">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/52311DDB28FB438B879D070C0DF20BB8">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/5C7A7E52EE974D9EBF253E03BE62731F">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/65982A02E7514FD784091AE053165C6C">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/51009729700D4B7E84423D640CEB2D93">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/92250D8755894930816D808F62B5B7BA">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/D081B3DF33944205BA0DE791945F3F45">
-<meta property="og:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/D2CA10F575F84F028D66863F463895FE">
-<meta property="og:updated_time" content="2016-12-09T14:10:09.616Z">
+<meta property="og:description" content="“哈？你现在又要去破坏那个家庭了吗？真可怜~”香子这样说。
+一直在想，零恍若溺亡的悲剧感为何被塑造得如此成功，如此具有代入感？每次零得到救赎的时候，总感觉，自己…自己，内心仿佛被几缕阳光照射到，是那样地温暖，可却那样地短暂。
+零面前有三座大山，最大的一座来自家庭，而另外两座则由家庭派生而来，一是职业，二是交际。
+诚如零自身所言，他的到来，摧毁了幸田家的两只雏鸟，占据了养父所有关于将棋的视线。零的">
+<meta property="og:image" content="http://img.hb.aicdn.com/7a27a826c9a9584791e4b9a81d2d02a72e81f2bf47e21-nRcnHP_fw658">
+<meta property="og:updated_time" content="2017-04-29T10:43:06.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android Studio - gradle配置踩坑">
-<meta name="twitter:description" content="1.问题当我们从团队协作者或者开源Android项目网站上获取以Gradle构建的Android项目，并点击Open an existing Android Studio project将它导入Android Studio时，经常遇到如下Android Studio未响应的问题：
-
-2.分析查看idea.log，我们得知问题是由Started sync with Gradle时造成Connecti">
-<meta name="twitter:image" content="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/17B096A8FB554EFF84492110EE7C45AF">
+<meta name="twitter:title" content="三月的狮子">
+<meta name="twitter:description" content="“哈？你现在又要去破坏那个家庭了吗？真可怜~”香子这样说。
+一直在想，零恍若溺亡的悲剧感为何被塑造得如此成功，如此具有代入感？每次零得到救赎的时候，总感觉，自己…自己，内心仿佛被几缕阳光照射到，是那样地温暖，可却那样地短暂。
+零面前有三座大山，最大的一座来自家庭，而另外两座则由家庭派生而来，一是职业，二是交际。
+诚如零自身所言，他的到来，摧毁了幸田家的两只雏鸟，占据了养父所有关于将棋的视线。零的">
+<meta name="twitter:image" content="http://img.hb.aicdn.com/7a27a826c9a9584791e4b9a81d2d02a72e81f2bf47e21-nRcnHP_fw658">
   
     <link rel="alternative" href="/atom.xml" title="Yang Weijie&#39;s blog" type="application/atom+xml">
   
@@ -139,7 +135,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-Android-Gradle-Settings" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-三月的狮子" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -149,7 +145,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Android Studio - gradle配置踩坑
+      三月的狮子
     </h1>
   
 
@@ -157,57 +153,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-问题"><a href="#1-问题" class="headerlink" title="1.问题"></a>1.问题</h5><p>当我们从团队协作者或者开源Android项目网站上获取以Gradle构建的Android项目，并点击<a href="https://developer.android.com/studio/intro/migrate.html" target="_blank" rel="external">Open an existing Android Studio project</a>将它导入Android Studio时，经常遇到如下Android Studio未响应的问题：</p>
-<p><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/17B096A8FB554EFF84492110EE7C45AF" alt="Building XXX Gradle project info"></p>
-<h5 id="2-分析"><a href="#2-分析" class="headerlink" title="2.分析"></a>2.分析</h5><p>查看idea.log，我们得知问题是由<code>Started sync with Gradle</code>时造成<code>Connection Failed</code>而引发的。<br><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/52311DDB28FB438B879D070C0DF20BB8" alt="idea.log"></p>
-<p>原因之一可能是该Android项目所需的Gradle版本与本地存在的Gradle版本并不适配。因此，Android Studio会自动去下载该Android项目所需的Gradle版本。</p>
-<blockquote>
-<p>然而，却跪倒在GFW面前。</p>
-</blockquote>
-<h5 id="3-解决"><a href="#3-解决" class="headerlink" title="3.解决"></a>3.解决</h5><p>通过在Android Studio中依次点击<code>File &gt; Settings &gt; Build, Execution, Deployment &gt; Gradle</code>,我们可以锁定当前项目使用的Gradle的位置。[2]</p>
-<pre><code>- 若选中`Use default gradle wrapper(recommended)`,则设置的Gradle位置为`Service directory path`中的路径；
-- 若选中`Use local gradle distribution`，则设置的Gradle位置为`Gradle home`中的路径。
-</code></pre><blockquote>
-<p>注：<code>Service directory path</code>是全局级的，<code>Use default gradle wrapper(recommended)</code>与<code>Use local gradle distribution</code>是项目级的，优先级高于全局级的设置。</p>
-</blockquote>
-<p><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/5C7A7E52EE974D9EBF253E03BE62731F" alt="Gradle Location"></p>
-<p>因此，根据当前设置，我们在<code>C:\Users\%Your_User_Name%\.gradle\wrapper\dists</code>目录下找到当前已安装的Gradle，<br><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/65982A02E7514FD784091AE053165C6C" alt=".gradle/wrapper/dists"><br>并确保Gradle的完整性。<br><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/51009729700D4B7E84423D640CEB2D93" alt="ensure gradle&#39;s integrity"></p>
-<p>下图是Android Studio Gradle插件版本与Gradle版本之间的对应关系[1]。</p>
-<blockquote>
-<p>Gradle插件版本一般继承自Android Studio的版本。</p>
-</blockquote>
-<p><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/92250D8755894930816D808F62B5B7BA" alt="plugin version|required gradle version"></p>
-<p>博主的本地环境为</p>
-<table>
-<thead>
-<tr>
-<th>plugin version</th>
-<th>required gradle version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2.2.2</td>
-<td>2.14.1</td>
-</tr>
-</tbody>
-</table>
-<p>因此，对该Android项目的<code>build.gradle</code>和<code>gradle\wrapper\gradle-wrapper.properties</code>这两个文件进行修改[1]。<br><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/D081B3DF33944205BA0DE791945F3F45" alt="gradle-wrapper.properties"></p>
-<p><img src="http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/D2CA10F575F84F028D66863F463895FE" alt="build.gradle"></p>
-<p>修改过后，可对该Android项目进行正常导入，并且不会出现上述的未响应情况。</p>
-<p>参考文献：<br><a href="https://developer.android.com/studio/releases/gradle-plugin.html" target="_blank" rel="external">1 Android Plugin for Gradle Release Notes</a><br><a href="https://www.jetbrains.com/help/idea/2016.2/gradle-2.html" target="_blank" rel="external">2 Configure Gradle project settings</a></p>
+        <p><img src="http://img.hb.aicdn.com/7a27a826c9a9584791e4b9a81d2d02a72e81f2bf47e21-nRcnHP_fw658" alt=""></p>
+<p>“哈？你现在又要去破坏那个家庭了吗？真可怜~”香子这样说。</p>
+<p>一直在想，零恍若溺亡的悲剧感为何被塑造得如此成功，如此具有代入感？每次零得到救赎的时候，总感觉，自己…自己，内心仿佛被几缕阳光照射到，是那样地温暖，可却那样地短暂。</p>
+<p>零面前有三座大山，最大的一座来自家庭，而另外两座则由家庭派生而来，一是职业，二是交际。</p>
+<p>诚如零自身所言，他的到来，摧毁了幸田家的两只雏鸟，占据了养父所有关于将棋的视线。零的父母、妹妹死于车祸，第一个家庭是零的痛苦；养父是真正关心零的，香子与弟弟和零相爱相杀（雾），第二个家庭是零的现实；明里姐、日向、桃子的体贴、元气、可爱，第三个家庭是零的救赎。好比拾级于天国的阶梯，生活总会慢慢好起来的，不是吗？</p>
+<p>零不是真正热爱将棋，他只是有不得不这么做的理由：生存。</p>
+<p>将棋，总有赢的一方，总有输的一方。表面上看，赢的人剥夺了输的人快乐乃至幸福的权利。难道为了自己的生存，就要剥夺其他人的快乐吗？这是零作为一个温柔的人，曾经想到的！但是，输的人，之所以输，不就是因为他们弱吗？只有这次输了，他们才想要变强。难道这次输了，以后就再也不下将棋了，就这样逃避了吗？难道没有眼睁睁看到输的结果，就要轻言放弃了吗？棋局虽小，但变化无穷，将棋本身与下将棋的人，能够让我们看到，看到那么多思考，甚至发现新的一个自己。事情怎么会轻松地按照你所想的那样去发展呢，谁都会被现实当头棒喝，无论是零输给岛田，还是岛田四连败给宗谷。运动员在没有比赛的时候会做什么？我们能够做的，只有不断练习，练习，练习啊！</p>
+<p>零的身旁一直没有人，面对早已形成的小的交际圈子毫无融入之力。中饭偷偷在天台孤单地吃，郊游活动一个人偷偷躲起来吃饭，公寓也没能好好照顾自己（空荡的冰箱、房间；许久之后才购置的窗帘足以说明一切）。不要脸地说，我的身上有他的影子。其实，很多人身上都有他的影子。百感交集，还能怎么办呢。对自己的现状深以为然，但却无力改变、无心改变，就这样溺亡在碧蓝的水中，透不过气来，沉下去…</p>
+<p>零是那么温柔，好好地、考虑周全地照顾岛田，甚至有一种啰嗦的感觉。突然好想给冷漠的自己抽好几个耳刮子。</p>
+<p>零是那么强，正如班主任所说，作为一名高中生，既要照顾自己，又要准备将棋，还要应付高中教育。这是我处于与零同龄的时候不敢想象的。我认为，这对于零而言，不仅是一份剥夺，也是上帝的一份恩赐。正常人痴睡傻玩的高中是一种高中，零恢弘色彩的高中也是一种高中。谁又能说谁的一定更好呢？唯个人喜好耳。</p>
+<p>感慨止于此XD</p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/12/08/Android-Gradle-Settings/" class="archive-article-date">
-  	<time datetime="2016-12-08T15:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-08</time>
+      <a href="/2017/04/29/三月的狮子/" class="archive-article-date">
+  	<time datetime="2017-04-29T10:40:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-04-29</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Studio/">Android Studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/配置/">配置</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/影评/">影评</a></li></ul>
 	</div>
 
       
@@ -220,18 +188,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/13/QuickSort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          QuickSort
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/06/your-name/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">君名</div>
+    <a href="/2016/12/13/QuickSort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">QuickSort</div>
       <i class="icon-circle-right"></i>
     </a>
   
