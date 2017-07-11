@@ -1,11 +1,13 @@
 language: node_js
-node_js: stable
+node_js: 
+  - '6.3'
 
 # S: Build Lifecycle
 install:
   - npm install -g hexo
   - npm install -g hexo-cli
   - npm install
+  - npm i hexo-generator-json-content --save
 
 
 #before_script:
