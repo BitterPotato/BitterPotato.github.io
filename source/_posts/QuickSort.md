@@ -4,7 +4,7 @@ title: QuickSort
 date: 2016-12-13 12:05:57
 comments: true
 tags: 
-	- 算法与数据结构
+	- 算法
 	- 面试
 ---
 #### 概述
@@ -237,7 +237,7 @@ Java中对于基本数据类型的排序算法通过DualPivotQuicksort实现。�
 > 环境：CPU 4核8线程 2.30GHZ
 > 测试序列：长度100范围0~100的随机数序列
 
-[代码地址](https://github.com/BitterPotato/Algorithm)
+[代码地址](https://github.com/BitterPotato/Algorithm/tree/master/src/sort)
 
 #### 参考文献
 1 Mark Allen Weiss[美]. 数据结构与算法分析: Java语言描述:第2版[M]. 机械工业出版社, 2012.

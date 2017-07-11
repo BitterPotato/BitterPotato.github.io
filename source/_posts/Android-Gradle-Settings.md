@@ -10,11 +10,11 @@ tags:
 ##### 1.问题
 当我们从团队协作者或者开源Android项目网站上获取以Gradle构建的Android项目，并点击[Open an existing Android Studio project](https://developer.android.com/studio/intro/migrate.html)将它导入Android Studio时，经常遇到如下Android Studio未响应的问题：
 
-![Building XXX Gradle project info](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/17B096A8FB554EFF84492110EE7C45AF)
+![Building XXX Gradle project info](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/Building_XXX_Gradle_project_info.png)
 
 ##### 2.分析
 查看idea.log，我们得知问题是由`Started sync with Gradle`时造成`Connection Failed`而引发的。
-![idea.log](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/52311DDB28FB438B879D070C0DF20BB8)
+![idea.log](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/idea_log.png)
 
 原因之一可能是该Android项目所需的Gradle版本与本地存在的Gradle版本并不适配。因此，Android Studio会自动去下载该Android项目所需的Gradle版本。
 > 然而，却跪倒在GFW面前。
@@ -26,17 +26,17 @@ tags:
 	- 若选中`Use local gradle distribution`，则设置的Gradle位置为`Gradle home`中的路径。
 > 注：`Service directory path`是全局级的，`Use default gradle wrapper(recommended)`与`Use local gradle distribution`是项目级的，优先级高于全局级的设置。
 
-![Gradle Location](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/5C7A7E52EE974D9EBF253E03BE62731F)
+![Gradle Location](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/Gradle_Location.png)
 
 因此，根据当前设置，我们在`C:\Users\%Your_User_Name%\.gradle\wrapper\dists`目录下找到当前已安装的Gradle，
-![.gradle/wrapper/dists](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/65982A02E7514FD784091AE053165C6C)
+![.gradle/wrapper/dists](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/gradle_dists.png)
 并确保Gradle的完整性。
-![ensure gradle's integrity](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/51009729700D4B7E84423D640CEB2D93)
+![ensure gradle's integrity](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/gradle_integrity.png)
 
 下图是Android Studio Gradle插件版本与Gradle版本之间的对应关系[1]。
 > Gradle插件版本一般继承自Android Studio的版本。
 
-![plugin version|required gradle version](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/92250D8755894930816D808F62B5B7BA)
+![plugin version|required gradle version](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/gradle_version.png)
 
 博主的本地环境为
 
@@ -45,9 +45,9 @@ tags:
 | 2.2.2          | 2.14.1                  |
 
 因此，对该Android项目的`build.gradle`和`gradle\wrapper\gradle-wrapper.properties`这两个文件进行修改[1]。
-![gradle-wrapper.properties](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/D081B3DF33944205BA0DE791945F3F45)
+![gradle-wrapper.properties](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/gradle_wrapper.png)
 
-![build.gradle](http://note.youdao.com/yws/public/resource/f390505cbc08c7775f8c079b59fd5445/D2CA10F575F84F028D66863F463895FE)
+![build.gradle](http://oi0xi3dzx.bkt.clouddn.com/web/android/basic/build.gradle.png)
 
 修改过后，可对该Android项目进行正常导入，并且不会出现上述的未响应情况。
 
