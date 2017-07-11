@@ -8,6 +8,8 @@ install:
   - npm install -g hexo-cli
   - npm install
   - npm i hexo-generator-json-content --save
+  - npm uninstall hexo-renderer-marked --save
+  - npm install hexo-renderer-pandoc --save
 
 
 #before_script:
