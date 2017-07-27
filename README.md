@@ -1,0 +1,1 @@
+ [![Build Status](https://travis-ci.org/BitterPotato/BitterPotato.github.io.svg?branch=blog_source)](https://travis-ci.org/BitterPotato/BitterPotato.github.io)
