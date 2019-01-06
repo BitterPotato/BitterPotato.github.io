@@ -184,7 +184,7 @@ see implement: [divide.MergeSortIter](https://github.com/BitterPotato/Algorithm/
 通过两两元素之间的比较进行排序，必须要执行O(nlogn)次比较操作。
 **原因**
 通过两两元素之间的比较进行排序的算法可以通过树结构来描述，树的每个叶节点都标记一个关于原输入元素序列的排列。从树根节点到树叶节点的最长路径上的比较次数为该算法时间复杂度的最差情况。
-![](http://oi0xi3dzx.bkt.clouddn.com/algorithm/tree/compare_tree.png)
+![](https://pic.tanuki233.com/algorithm/tree/compare_tree.png)
 
 该二叉树至少包含有n!个叶节点（排列数目），因此这棵树的宽度至少是$$log(n!)>=log(n/2)^{(n/2)}=(n/2)log(n/2)$$，因此最差情况下必须要执行O(nlogn)次比较操作，即算法复杂度为O(nlogn)
 
@@ -219,7 +219,7 @@ $$
 
 ###### 分治策略的实现
 由于需要多维护一个$$S_V$$，partition()中将S分为$$S_L$$,$$S_V$$,$$S_R$$三个子集不易实现。
-![](http://oi0xi3dzx.bkt.clouddn.com/algorithm/array/partitionK.png)
+![](https://pic.tanuki233.com/algorithm/array/partitionK.png)
 > 其中基准v为5，指针l左侧l为比基准v小的数，而指针m左侧为不超过基准的数。当分割时遇到比基准小的数时，需要将$$S_V$$和$$S_R$$两个子集整体向右移动一位，耗费极大时间
 
 因此，实现时可将上述的三组放宽为：
@@ -283,11 +283,11 @@ $$T(n) = 2T(n/2) + O(n)$$
 
 假设我们底层选择的数选择为1，那么递归顶层选择的n个数，它们应该是，1的n次复根，即等式$$z^n = 1$$ 的n个复数解。
 
-![](http://oi0xi3dzx.bkt.clouddn.com/algorithm/tree/foruier_divide.png)
+![](https://pic.tanuki233.com/algorithm/tree/foruier_divide.png)
 
 复根的理解如下：
 
-![](http://oi0xi3dzx.bkt.clouddn.com/algorithm/tree/fushu.png)
+![](https://pic.tanuki233.com/algorithm/tree/fushu.png)
 
 
 

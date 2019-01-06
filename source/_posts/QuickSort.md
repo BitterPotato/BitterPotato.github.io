@@ -83,7 +83,7 @@ tags:
 ###### 3.2.1 分割方式1
 forePoint从前往后找大于pivot的元素，backPoint从后往前找小于pivot的元素，并交换。
 当forePoint与backPoint相遇后，将pivot放至正确位置。
-![分割方式1](http://oi0xi3dzx.bkt.clouddn.com/quicksort_ver1.png?imageView/2/w/344)
+![分割方式1](https://pic.tanuki233.com/quicksort_ver1.png?imageView/2/w/344)
 > 之后以此类推
 > 标红的元素为pivot
 
@@ -122,7 +122,7 @@ forePoint从前往后找大于pivot的元素，backPoint从后往前找小于piv
 curPoint从前往后遍历序列，parPoint指向小于基准与大于等于基准的序列的分割位置 —— 大于等于基准的序列的第一个元素。
 当curPoint遍历结束，将pivot与parPoint位置的元素交换。
 
-![分割方式2](http://oi0xi3dzx.bkt.clouddn.com/quicksort_ver2.png?imageView/2/w/358)
+![分割方式2](https://pic.tanuki233.com/quicksort_ver2.png?imageView/2/w/358)
 > 之后以此类推
 > 标红的元素为pivot
 
